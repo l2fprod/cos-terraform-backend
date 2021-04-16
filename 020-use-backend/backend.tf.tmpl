@@ -1,0 +1,15 @@
+terraform {
+  required_version = ">= 0.13.2"
+
+  backend "s3" {
+    bucket                      = "${bucket}"
+    key                         = "global.tfstate"
+    region                      = "${region}"
+    skip_region_validation      = true
+    skip_credentials_validation = true
+    skip_metadata_api_check     = true
+    endpoint                    = "${endpoint}"
+    access_key                  = "${access_key}"
+    secret_key                  = "${secret_key}"
+  }
+}

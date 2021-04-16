@@ -1,0 +1,6 @@
+*.tfstate*
+.terraform
+.terraform.lock.hcl
+020-use-backend/backend.tf
+hello.txt
+*.tfvars
