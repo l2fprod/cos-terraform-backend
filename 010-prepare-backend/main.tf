@@ -17,7 +17,7 @@ variable "basename" {
   default = "cos-terraform-backend"
 }
 
-variable "resource-group" {
+variable "resource_group" {
   type    = string
   default = ""
 }
@@ -44,18 +44,18 @@ provider "ibm" {
 
 # a new or existing resource group to create resources
 resource "ibm_resource_group" "group" {
-  count = var.resource-group != "" ? 0 : 1
+  count = var.resource_group != "" ? 0 : 1
   name  = "${var.basename}-group"
   tags  = var.tags
 }
 
 data "ibm_resource_group" "group" {
-  count = var.resource-group != "" ? 1 : 0
-  name  = var.resource-group
+  count = var.resource_group != "" ? 1 : 0
+  name  = var.resource_group
 }
 
 locals {
-  resource_group_id       = var.resource-group != "" ? data.ibm_resource_group.group.0.id : ibm_resource_group.group.0.id
+  resource_group_id       = var.resource_group != "" ? data.ibm_resource_group.group.0.id : ibm_resource_group.group.0.id
 }
 
 # a COS instance
