@@ -86,7 +86,7 @@ resource "ibm_cos_bucket" "bucket" {
   storage_class        = "smart"
 }
 
-resource "local_file" "ansible-config" {
+resource "local_file" "backend" {
   content = templatefile("../020-use-backend/backend.tf.tmpl",
     {
       bucket = ibm_cos_bucket.bucket.bucket_name
