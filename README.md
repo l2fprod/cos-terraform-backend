@@ -22,6 +22,10 @@ This repository shows how to use IBM Cloud Object Storage (COS) as a backend to 
 
 3. Look into your COS bucket for a file named `global.state`.
 
+## Enable object versioning
+
+You can benefit from COS built-in object versioning by changing the definition of the COS bucket in `010-prepare-backend/main.tf` to include the [object_versioning flag](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cos_bucket#object_versioning).
+
 ## License
 
 This project is licensed under the Apache License Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0).
