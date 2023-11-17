@@ -4,3 +4,4 @@
 020-use-backend/backend.tf
 hello.txt
 *.tfvars
+*.env
