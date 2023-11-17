@@ -28,7 +28,7 @@ variable "tags" {
 }
 
 terraform {
-  required_version = ">=0.13"
+  required_version = "< 1.6.0"
   required_providers {
     ibm = {
       source = "IBM-Cloud/ibm"
